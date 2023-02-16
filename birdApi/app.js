@@ -3,12 +3,14 @@ const app = express();
 
 app.use(express.json());
 
+const allTheBirds = ["Pigeon", "Duck", "Albatross"];
+
 app.get("/birds", (req, res) => {
-    res.send({ message: "List of birds" });
+    res.send({ allTheBirds });
 });
 
-app.get("/birds/:birdName", (req, res) =>  {
-    res.send({ birdName: req.params.birdName });
+app.get("/birds/:id", (req, res) =>  {
+    res.send({ id: req.params.id });
 });
 
 
